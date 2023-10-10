@@ -9,6 +9,8 @@ sequenceDiagram
     server-->>browser: HTML document
     deactivate server
 
+    Note right of browser: The browser opens the HTML SPA and calls the rest of the files.
+
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
     activate server
     server-->>browser: the css file

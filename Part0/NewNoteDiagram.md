@@ -9,7 +9,7 @@ sequenceDiagram
     server-->>browser: HTML document
     deactivate server
 
-    Note right of browser: The browser starts executing a POST request to save the form data on the server and calls a redirect to the notes page
+    Note right of browser: The browser starts executing a POST request to save the form data on the server (note) and calls a redirect to the notes page
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
     activate server
