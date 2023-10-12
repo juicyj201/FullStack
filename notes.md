@@ -72,4 +72,44 @@ React
 
     We can create a function using the function keyword or by using a function expression (here we just use the variable that is set to a function)
 
+# Object methods and this
+    'this' keyword can be used to reference an object of itself (just like in c# or java, except it refers to objects rather than classes). When using 'this' make sure to not use references to attributes or methods, since it loses the memory of that objects properties and information and sets it to a default global object. You can also use bind, which creates a new function where this is bound to point to the object, independent of whee and how the method is being called.
+
+# Component state and event handlers
+
+## Destructuring
+    this makes assignment of variables easier:
+    
+    eg) const { name, age } = props
+    
+    where props = {
+        name: 'Arto Hellas',
+        age: 35
+    }
+
+    This can be done even simpler, by passing destructured attributes as arguments to a method
+
+    eg) const Hello = ({ name, age }) => {
+    
+    instead of:
+        const Hello = (props) => {
+            const { name, age } = props
+
+# Page re-rendering
+    you can set the main page's render method to a function/const func in order to call it to render the page again
+
+# Stateful Component
+    You can import the useState function from the react libary, in order to change the state of the app (basically re-render a component when needed). It renders the page again when there are changes to a variable that is called by a function or event handler
+
+    eg) import { useState } from 'react'
+
+        const App = () => {
+        const [ counter, setCounter ] = useState(0)
+
+# Event handling
+    Events can be triggered when certain user input or certain events occur. The most common example is the onClick event handler, wich calls a method or a lambda function
+
+# Complex state
+    It is forbidden in React to mutate state directly, since it can result in unexpected side effects
+
 
