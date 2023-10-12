@@ -67,30 +67,42 @@ const Statistics = ({good, neutral, bad, all}) => {
     return (
       <>
         <h1>Statistics</h1>
-        <StatisticsLine text="Good" value={good}/>
-        <StatisticsLine text="Neutral" value={neutral}/>
-        <StatisticsLine text="Bad" value={bad}/>
-        <StatisticsLine text="All" value={all}/>
-        <StatisticsLine text="Average" value={avg}/>
-        <StatisticsLine text="Positive" value={positive}/>
+        <table>
+          <tbody>
+            <StatisticsLine text="Good" value={good}/>
+            <StatisticsLine text="Neutral" value={neutral}/>
+            <StatisticsLine text="Bad" value={bad}/>
+            <StatisticsLine text="All" value={all}/>
+            <StatisticsLine text="Average" value={avg}/>
+            <StatisticsLine text="Positive" value={positive}/>
+          </tbody>
+        </table>
       </>
     )
   }
 }
 
 const StatisticsLine = ({text, value}) => {
+  const spacing = 100
+
   if(text === "Positive"){
     return(
-      <div>
-        <p>{text}: {value}%</p>
-      </div>
+      <>
+        <tr>
+          <th align="left">{text}</th>
+          <td>{value}%</td>
+        </tr>
+      </>
     )
   }
   else{
     return(
-      <div>
-        <p>{text}: {value}</p>
-      </div>
+      <>
+        <tr>
+          <th align="left">{text}</th>
+          <td>{value}</td>
+        </tr>
+      </>
     )
   }
 }
