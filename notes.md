@@ -21,6 +21,8 @@ React
 
 # Arrays
     You can loop through an array using a foreach operator [ => ]. It can also recieve other arguments
+    There are other useful functions such as filter, map, concat and forEach.
+    To iterate over a list in js you will need to provide a key for the il tag.
 
 ## Array methods
     concat - creates a new array with added items and returns it
