@@ -114,4 +114,11 @@ React
 # Complex state
     It is forbidden in React to mutate state directly, since it can result in unexpected side effects
 
+# String interpolation
+    You can use the `` sign to interpolate strings:
+    eg) `${newName} is already added to phonebook`
+    which returns)
+        `Arto Hellas is already added to phonebook`
 
+    You can also use string concatenation with a plus operator, but it would be better to use string interpolation
+    
