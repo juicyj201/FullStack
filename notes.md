@@ -121,4 +121,33 @@ React
         `Arto Hellas is already added to phonebook`
 
     You can also use string concatenation with a plus operator, but it would be better to use string interpolation
+
+Server
+# Promises
+    This is an object representing the eventual completion or failure of an asynchronous operation
+    It can have 3 distinct states:
+        Pending (the final value is not available yet)
+        Fulfilled (operation has completed and the final value is available)
+        Rejected (an error prevented the final value from being determined - a failed operation)
+
+    to achieve the result of the operation represented by the promise we have to add an event handler, using then. For error handling we can also use, catch
+
+# Effect Hooks
+    The Effect Hook lets you perform side effects on function components. Data fetching, setting up a subscription, and manually changing the DOM in React components are all examples of side effects. It is useful when fetching or updating data used in servers when external changes need to be made outside of the UI.
+
+# Better way for object init
+    Instead of using the older way of object initialization:
     
+    (where)
+    const name = 'Leevi'
+    const age = 0
+
+    eg) const person = {
+        name: name, 
+        age: age
+    }
+
+    We can use a simplified expression:
+
+    eg) const person = {name, age}
+
