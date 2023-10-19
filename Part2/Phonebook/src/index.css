@@ -1,0 +1,31 @@
+.heading {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color:darkolivegreen;
+}
+
+.subheading {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color:olive;
+}
+
+.success {
+    color: darkolivegreen;
+    background: lightgrey;
+    font-size: 20px;;
+    border-style:solid;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.error {
+    color: darkred;
+    background: lightgrey;
+    font-size: 20px;;
+    border-style:solid;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}

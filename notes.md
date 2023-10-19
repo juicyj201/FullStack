@@ -151,3 +151,5 @@ Server
 
     eg) const person = {name, age}
 
+# Style (css)
+    when applying style to elements you use the className attribute instead of class like regular html
