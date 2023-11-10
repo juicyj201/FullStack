@@ -13,13 +13,13 @@ const getByName = name => {
     return request.then(response => response.data)
 }
 
-const getWeather = ({lat, lon}) => {
-    const request = axios.get(`${urlWeather}/weather?lat=${lat}&lon=${lon}&appid=7330825400aa108010f7a11f29122810`)
-    return request.then(response => response.data)
-}
+// const getWeather = ({lat, lon}) => {
+//     const request = axios.get(`${urlWeather}/weather?lat=${lat}&lon=${lon}&appid=7330825400aa108010f7a11f29122810`)
+//     return request.then(response => response.data)
+// }
 
 export default {
     getAll,
-    getByName,
-    getWeather
+    getByName
+    // getWeather
 }
