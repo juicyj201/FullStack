@@ -8,8 +8,8 @@ function App() {
   const [filterCountries, setFilterCountries] = useState([])
   const [notFound, setNotFound] = useState(false)
   const [errorDisplay, setErrorDisplay] = useState(<></>)
-  // const [weather, setWeather] = useState()
-  // const [weatherIcon, setWeatherIcon] = useState()
+  const [weather, setWeather] = useState()
+  const [weatherIcon, setWeatherIcon] = useState()
 
   const value1 = document.getElementById('countryInput')
 
@@ -45,10 +45,10 @@ function App() {
 
         <img src={filteredCountry.flags.png} />
 
-        {/* <h2>Weather in {filteredCountry.capital}</h2>
+        <h2>Weather in {filteredCountry.capital}</h2>
         <p>temperature: {weather.main.temp} Celsius</p>
         <img src={weatherIcon}/>
-        <p>wind: {weather.wind.speed} m/s</p> */}
+        <p>wind: {weather.wind.speed} m/s</p>
       </div>
       )
   }
@@ -64,12 +64,12 @@ function App() {
     } 
     else if(filterCountries.length === 1)
     {
-        // service
-        //   .getWeather(filterCountries[0].latlng[0], filterCountries[0].latlng[1])
-        //   .then(w => {
-        //     setWeather(w)
-        //     setWeatherIcon(`${urlWeatherIcon}/${w.weather[0].icon}@2x.png`)
-        //   })
+        service
+          .getWeather(filterCountries[0].latlng[0], filterCountries[0].latlng[1])
+          .then(w => {
+            setWeather(w)
+            setWeatherIcon(`${urlWeatherIcon}/${w.weather[0].icon}@2x.png`)
+          })
 
       showCountryInfo()
     }
