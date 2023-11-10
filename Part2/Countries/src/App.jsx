@@ -28,6 +28,8 @@ function App() {
       return(<li key={index}>{item}</li>)
     })
 
+    const temp = weather.main.temp
+    const speed = weather.wind.speed
     setErrorDisplay(
       <div>
         <h1>{filteredCountry.name.common}</h1>
@@ -46,9 +48,9 @@ function App() {
         <img src={filteredCountry.flags.png} />
 
         <h2>Weather in {filteredCountry.capital}</h2>
-        <p>temperature: {weather.main.temp} Celsius</p>
+        <p>temperature: {temp} Celsius</p>
         <img src={weatherIcon}/>
-        <p>wind: {weather.wind.speed} m/s</p>
+        <p>wind: {speed} m/s</p>
       </div>
       )
   }
@@ -62,14 +64,17 @@ function App() {
       setNotFound(true)  
       setFilterCountries(filterCountries.filter(country => country.name.common.toLowerCase().includes(value1.value)))
     } 
-    else if(filterCountries.length === 1)
+    else if(filterCountries.length == 1)
     {
-        service
-          .getWeather(filterCountries[0].latlng[0], filterCountries[0].latlng[1])
-          .then(w => {
-            setWeather(w)
-            setWeatherIcon(`${urlWeatherIcon}/${w.weather[0].icon}@2x.png`)
-          })
+      const lat = filterCountries[0].latlng[0]
+      const lon = filterCountries[0].latlng[1]
+
+      service
+        .getWeather(lat, lon)
+        .then(w => {
+          setWeather(w)
+          setWeatherIcon(`${urlWeatherIcon}/${w.weather[0].icon}@2x.png`)
+        })
 
       showCountryInfo()
     }
@@ -84,7 +89,8 @@ function App() {
     <>
       <div>
         <div>find countries  
-          <input 
+          <input
+            autoFocus={true} 
             id="countryInput"
             type="text"
             onInput={filterByCountry}/>
